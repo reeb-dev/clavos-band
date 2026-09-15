@@ -6,7 +6,8 @@ Landing one-page del artista **Clavos Band / Clavito Actis**: blues-rock argenti
 
 ```bash
 npm install
-npm run dev
+npm run preview   # build + producción (más rápido)
+# o: npm run dev
 ```
 
 Abrí [http://localhost:43127](http://localhost:43127).

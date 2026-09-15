@@ -7,9 +7,9 @@ function StageAtmosphere() {
       className="pointer-events-none absolute inset-0 overflow-hidden"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_100%,#3a1a0c_0%,transparent_55%),radial-gradient(ellipse_50%_40%_at_20%_0%,#5a2810_0%,transparent_45%),radial-gradient(ellipse_40%_35%_at_85%_10%,#2a1408_0%,transparent_50%),linear-gradient(180deg,#0a0705_0%,#120c08_45%,#0a0705_100%)]" />
-      <div className="beam-pulse absolute -top-[20%] left-1/2 h-[120%] w-[38%] -translate-x-1/2 bg-[conic-gradient(from_180deg_at_50%_0%,transparent_40%,rgb(212_100_42_/_0.22)_50%,transparent_60%)] blur-2xl" />
-      <div className="beam-pulse absolute -top-[10%] left-[18%] h-[90%] w-[22%] rotate-[-12deg] bg-[linear-gradient(180deg,rgb(240_160_96_/_0.18),transparent_70%)] blur-xl [animation-delay:1.5s]" />
-      <div className="beam-pulse absolute -top-[10%] right-[14%] h-[85%] w-[20%] rotate-[14deg] bg-[linear-gradient(180deg,rgb(212_100_42_/_0.14),transparent_70%)] blur-xl [animation-delay:3s]" />
+      <div className="beam-pulse absolute -top-[20%] left-1/2 h-[120%] w-[38%] -translate-x-1/2 bg-[conic-gradient(from_180deg_at_50%_0%,transparent_40%,rgb(212_100_42_/_0.22)_50%,transparent_60%)] blur-xl" />
+      <div className="beam-pulse absolute -top-[10%] left-[18%] h-[90%] w-[22%] rotate-[-12deg] bg-[linear-gradient(180deg,rgb(240_160_96_/_0.18),transparent_70%)] blur-md [animation-delay:1.5s]" />
+      <div className="beam-pulse absolute -top-[10%] right-[14%] h-[85%] w-[20%] rotate-[14deg] bg-[linear-gradient(180deg,rgb(212_100_42_/_0.14),transparent_70%)] blur-md [animation-delay:3s]" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0a0705] to-transparent" />
     </div>
   );

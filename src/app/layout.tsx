@@ -6,11 +6,15 @@ const display = Bebas_Neue({
   weight: "400",
   variable: "--font-display",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const body = Source_Sans_3({
   variable: "--font-body",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {
