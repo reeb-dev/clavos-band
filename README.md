@@ -9,7 +9,7 @@ npm install
 npm run dev
 ```
 
-Abrí [http://127.0.0.1:43127](http://127.0.0.1:43127).
+Abrí [http://localhost:43127](http://localhost:43127).
 
 ## Stack
 
