@@ -1,0 +1,322 @@
+<div class="page">
+  <header class="header">
+    <nav class="nav">
+      <a href="#top" class="brand">
+        <img
+          ngSrc="photos/logo-clavos.jpg"
+          width="48"
+          height="48"
+          alt="Clavos Band"
+          class="brand__logo"
+          priority
+        />
+        <span>CLAVOS BAND</span>
+      </a>
+      <div class="nav__links">
+        <a href="#artista">Artista</a>
+        <a href="#fotos">Fotos</a>
+        <a href="#temas">Temas</a>
+        <a href="#escuchar">Escuchar</a>
+        <a href="#contacto" class="nav__hide-sm">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <img
+        ngSrc="photos/post1.jpg"
+        fill
+        alt="Clavito Actis en vivo con bajo"
+        class="hero__bg"
+        priority
+      />
+      <div class="hero__shade"></div>
+      <div class="hero__content">
+        <div class="hero__eyebrow">
+          <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
+          <p>{{ artist.lead }}</p>
+        </div>
+        <h1>{{ artist.name }}</h1>
+        <p class="hero__pitch">{{ artist.tagline }} {{ artist.pitch }}</p>
+        <div class="hero__ctas">
+          <a href="#escuchar" class="btn btn--primary">Escuchar</a>
+          <a
+            class="btn btn--outline"
+            [href]="artist.links.instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Instagram</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ARTISTA -->
+    <section id="artista" class="section">
+      <div class="wrap artist">
+        <div class="artist__photo">
+          <img
+            ngSrc="photos/post4.jpg"
+            fill
+            alt="Clavito Actis"
+            class="artist__img"
+            priority
+          />
+        </div>
+        <div>
+          <p class="label">EL ARTISTA</p>
+          <h2>{{ artist.bio.headline }}</h2>
+          <p class="lead">{{ artist.bio.body }}</p>
+          <p class="muted">{{ artist.bio.extended }}</p>
+          <blockquote class="quote">
+            <p>“{{ artist.quotes[0].text }}”</p>
+            <footer>— {{ artist.quotes[0].source }}</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOTOS -->
+    <section id="fotos" class="section">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="label">DESDE INSTAGRAM</p>
+            <h2>Fotos del artista</h2>
+            <p class="muted">
+              Material de &#64;clavosband_clavito369 — escenario, estudio y
+              detrás de escena.
+            </p>
+          </div>
+          <img
+            ngSrc="photos/logo-clavos.jpg"
+            width="56"
+            height="56"
+            alt=""
+            class="section__logo"
+          />
+        </div>
+
+        <div class="gallery">
+          @for (photo of artist.photos; track photo.src; let i = $index) {
+            <figure class="gallery__item" [class.gallery__item--wide]="photo.wide">
+              <img [ngSrc]="photo.src" fill [alt]="photo.alt" />
+              <figcaption>
+                <span class="dot"></span>
+                {{ photo.caption }}
+              </figcaption>
+            </figure>
+          }
+        </div>
+
+        <div class="mt">
+          <a
+            class="btn btn--outline"
+            [href]="artist.links.instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Ver más en Instagram</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGO STRIP -->
+    <section class="strip">
+      <div class="wrap strip__inner">
+        <div class="strip__brand">
+          <img
+            ngSrc="photos/logo-clavos.jpg"
+            width="72"
+            height="72"
+            alt="Logo Clavos Band"
+            class="strip__logo"
+          />
+          <p>Tres clavos. Una banda.</p>
+        </div>
+        <a href="#temas" class="btn btn--black">Poner los temas</a>
+      </div>
+    </section>
+
+    <!-- TEMAS -->
+    <section id="temas" class="section">
+      <div class="wrap">
+        <h2>Temas</h2>
+        <p class="muted">Selección del catálogo. Abrí y escuchá.</p>
+        <ul class="list">
+          @for (track of artist.tracks; track track.title; let i = $index) {
+            <li>
+              <a
+                class="list__row"
+                [href]="track.href"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="list__num">{{ pad(i + 1) }}</span>
+                <span>
+                  <span class="list__title">{{ track.title }}</span>
+                  <span class="list__meta"
+                    >{{ track.album }} · {{ track.year }}</span
+                  >
+                </span>
+                <span class="list__action">PLAY</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- ESCUCHAR -->
+    <section id="escuchar" class="section section--border">
+      <div class="wrap">
+        <h2>Escuchar</h2>
+        <p class="muted">Las mismas redes del bio de Instagram.</p>
+        <div class="platforms">
+          @for (platform of artist.platforms; track platform.id) {
+            <a
+              class="platforms__row"
+              [href]="platform.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>{{ platform.label }}</span>
+              <span>{{ platform.description }}</span>
+            </a>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+    <section class="section section--border">
+      <div class="wrap history">
+        <div>
+          <h2>Historia</h2>
+          <ol class="timeline">
+            @for (item of artist.milestones; track item.year) {
+              <li>
+                <span class="timeline__year">{{ item.year }}</span>
+                <div>
+                  <p class="timeline__title">{{ item.title }}</p>
+                  <p class="muted small">{{ item.detail }}</p>
+                </div>
+              </li>
+            }
+          </ol>
+        </div>
+        <div class="history__photo">
+          <img
+            ngSrc="photos/post8.jpg"
+            fill
+            alt="Clavito Actis en Warner Chappell"
+          />
+          <p class="history__caption">WARNER CHAPPELL</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN -->
+    <section class="section section--border">
+      <div class="wrap">
+        <h2>Formación</h2>
+        <ul class="lineup">
+          @for (member of artist.lineup; track member.name) {
+            <li>
+              <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
+              <p class="lineup__name">{{ member.name }}</p>
+              <p class="lineup__role">{{ member.role }}</p>
+              <p class="muted small">{{ member.note }}</p>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- DISCOS -->
+    <section id="discos" class="section section--border">
+      <div class="wrap">
+        <h2>Discografía</h2>
+        <ol class="list">
+          @for (album of artist.albums; track album.title; let i = $index) {
+            <li class="list__row list__row--static">
+              <span class="list__num">{{ pad(i + 1) }}</span>
+              <span>
+                <span class="list__title">{{ album.title }}</span>
+                <span class="list__meta">{{ album.note }}</span>
+              </span>
+              <span class="list__year">{{ album.year }}</span>
+            </li>
+          }
+        </ol>
+        <div class="mt">
+          <a
+            class="btn btn--primary"
+            [href]="artist.links.spotify"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Abrir en Spotify</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section section--border">
+      <div class="wrap contact">
+        <img
+          ngSrc="photos/logo-clavos.jpg"
+          width="88"
+          height="88"
+          alt="Clavos Band"
+          class="contact__logo"
+        />
+        <h2>{{ artist.booking.headline }}</h2>
+        <p class="muted">{{ artist.booking.body }}</p>
+        <div class="contact__ctas">
+          <a
+            class="btn btn--primary"
+            [href]="artist.links.instagram"
+            target="_blank"
+            rel="noopener noreferrer"
+            >&#64;clavosband_clavito369</a
+          >
+          <a
+            class="btn btn--outline"
+            [href]="artist.links.youtube"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YouTube</a
+          >
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div class="footer__brand">
+        <img
+          ngSrc="photos/logo-clavos.jpg"
+          width="40"
+          height="40"
+          alt=""
+          class="footer__logo"
+        />
+        <div>
+          <p class="footer__name">CLAVOS BAND</p>
+          <p class="muted small">Demo Angular local · Blues-rock · Desde 1992</p>
+        </div>
+      </div>
+      <div class="footer__links">
+        @for (p of artist.platforms; track p.id) {
+          <a [href]="p.href" target="_blank" rel="noopener noreferrer">{{
+            p.label
+          }}</a>
+        }
+      </div>
+    </div>
+  </footer>
+</div>

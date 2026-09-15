@@ -1,23 +1,22 @@
-# Clavos Band · Clavito Actis
+# Clavos Band · Clavito Actis (Angular)
 
-Landing **demo** del artista Clavos Band / Clavito Actis.
+Demo local de la landing del artista. **No está publicada.**
 
-> Demo local — **no publicada**. No hay túnel ni URL pública.
-
-## Correr en este entorno
+## Correr
 
 ```bash
 npm install
-npm run preview
+npm start
 ```
 
-Puerto: `3847`. Abrí desde el panel **Ports** de Cursor (no desde Chrome de tu PC).
+Abrí http://127.0.0.1:3847 (panel Ports de Cursor).
 
 ## Stack
 
-Next.js + TypeScript + Tailwind + shadcn/ui
+- Angular 19 (standalone)
+- SCSS
+- Fotos desde Instagram `@clavosband_clavito369` en `public/photos/`
 
 ## Contenido
 
-- Datos: `src/data/artist.ts`
-- Fotos: `public/photos/`
+Datos en `src/app/data/artist.ts`.
