@@ -1,22 +1,23 @@
-# Clavos Band · Clavito Actis (Angular)
+# Clavos Band · Clavito Actis
 
-Demo local de la landing del artista. **No está publicada.**
+Landing oficial (Angular) de **Clavos Band / Clavito Actis**.
 
-## Correr
+## Demo
+
+- GitHub Pages: https://reeb-dev.github.io/clavos-band/
+
+## Desarrollo local
 
 ```bash
 npm install
 npm start
+# http://127.0.0.1:3847
 ```
 
-Abrí http://127.0.0.1:3847 (panel Ports de Cursor).
+## Build producción
 
-## Stack
+```bash
+npm run build -- --configuration=production --base-href=/clavos-band/
+```
 
-- Angular 19 (standalone)
-- SCSS
-- Fotos desde Instagram `@clavosband_clavito369` en `public/photos/`
-
-## Contenido
-
-Datos en `src/app/data/artist.ts`.
+El deploy a GitHub Pages corre automático con GitHub Actions en cada push a `main`.

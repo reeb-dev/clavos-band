@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://beef-realtor-off-food.trycloudflare.com/sitemap.xml
+Sitemap: https://reeb-dev.github.io/clavos-band/sitemap.xml
