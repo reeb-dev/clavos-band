@@ -98,7 +98,15 @@
             "host": "0.0.0.0",
             "port": 3847,
             "allowedHosts": [
-              "all"
+              "all",
+              ".trycloudflare.com",
+              ".loca.lt",
+              ".ngrok-free.app",
+              ".ngrok.io",
+              ".cursor.sh",
+              ".cursorusercontent.com",
+              "localhost",
+              "127.0.0.1"
             ]
           }
         },
