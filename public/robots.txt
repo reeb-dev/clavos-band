@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://beef-realtor-off-food.trycloudflare.com/sitemap.xml
