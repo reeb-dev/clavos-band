@@ -35,11 +35,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="es"
       className={`${display.variable} ${body.variable} dark h-full`}
-      style={{ backgroundColor: "#0a0705", color: "#f3ebe2" }}
+      style={{ backgroundColor: "#050505", color: "#f5f5f5" }}
     >
       <body
         className="flex min-h-full flex-col font-body"
-        style={{ backgroundColor: "#0a0705", color: "#f3ebe2", margin: 0 }}
+        style={{ backgroundColor: "#050505", color: "#f5f5f5", margin: 0 }}
       >
         {children}
       </body>
