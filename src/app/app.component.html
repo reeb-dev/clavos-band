@@ -14,6 +14,7 @@
       </a>
       <div class="nav__links">
         <a href="#artista">Artista</a>
+        <a href="#historia">Historia</a>
         <a href="#fotos">Fotos</a>
         <a href="#temas">Temas</a>
         <a href="#escuchar">Escuchar</a>
@@ -66,15 +67,70 @@
           />
         </div>
         <div>
-          <p class="label">EL ARTISTA</p>
+          <p class="label">BIO</p>
           <h2>{{ artist.bio.headline }}</h2>
           <p class="lead">{{ artist.bio.body }}</p>
           <p class="muted">{{ artist.bio.extended }}</p>
+          <p class="muted">{{ artist.bio.more }}</p>
           <blockquote class="quote">
             <p>“{{ artist.quotes[0].text }}”</p>
             <footer>— {{ artist.quotes[0].source }}</footer>
           </blockquote>
         </div>
+      </div>
+    </section>
+
+    <!-- FORMACIÓN MUSICAL -->
+    <section class="section section--border">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="label">OFICIO</p>
+            <h2>Formación y escuela</h2>
+            <p class="muted">
+              Del Instituto Williams y el Teatro Roma al estudio con Osvaldo
+              Tarantino, pianista del quinteto de Astor Piazzolla.
+            </p>
+          </div>
+        </div>
+        <ul class="training">
+          @for (item of artist.training; track item.title) {
+            <li>
+              <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
+              <p class="training__title">{{ item.title }}</p>
+              <p class="muted small">{{ item.detail }}</p>
+            </li>
+          }
+        </ul>
+        <ul class="endorse">
+          @for (item of artist.endorsements; track item.brand) {
+            <li>
+              <span class="endorse__brand">{{ item.brand }}</span>
+              <span class="muted small">{{ item.detail }}</span>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- COLABORACIONES -->
+    <section class="section section--border">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="label">ESCENARIO Y ESTUDIO</p>
+            <h2>Colaboraciones</h2>
+            <p class="muted">
+              Más de 50 discos como sesionista y partnerías con el rock nacional
+              e invitados internacionales.
+            </p>
+          </div>
+        </div>
+        <ul class="chips">
+          @for (name of artist.collaborations; track name) {
+            <li>{{ name }}</li>
+          }
+        </ul>
       </div>
     </section>
 
@@ -191,12 +247,17 @@
     </section>
 
     <!-- HISTORIA -->
-    <section class="section section--border">
+    <section id="historia" class="section section--border">
       <div class="wrap history">
         <div>
+          <p class="label">TRAYECTORIA</p>
           <h2>Historia</h2>
+          <p class="muted history__intro">
+            De sesionista adolescente a Clavos Band, Cosquín Rock, el Gran Rex y
+            el material 2025 con Iorio, Martínez y Marciello.
+          </p>
           <ol class="timeline">
-            @for (item of artist.milestones; track item.year) {
+            @for (item of artist.milestones; track item.year + item.title) {
               <li>
                 <span class="timeline__year">{{ item.year }}</span>
                 <div>

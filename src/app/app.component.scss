@@ -609,6 +609,88 @@ h2 {
   color: var(--red-glow);
 }
 
+.history__intro {
+  margin: 0.75rem 0 1.5rem;
+  max-width: 36rem;
+}
+
+/* training / oficio */
+.training {
+  list-style: none;
+  margin: 2.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .training {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.training li {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #0c0c0c;
+  padding: 1.5rem;
+}
+
+.training__title {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+}
+
+.endorse {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .endorse {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.endorse li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--red);
+  background: rgba(225, 6, 0, 0.06);
+}
+
+.endorse__brand {
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+  font-size: 1.1rem;
+}
+
+/* collaborations */
+.chips {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chips li {
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  background: #0c0c0c;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
 /* lineup */
 .lineup {
   list-style: none;

@@ -1,30 +1,75 @@
 export const artist = {
   name: 'Clavos Band',
   lead: 'Clavito Actis',
-  tagline: 'Músico & productor. Blues-rock desde 1992.',
+  tagline: 'Músico, bajista, cantautor y productor.',
   pitch:
-    'Potencia de escenario y oficio de estudio. Clavos Band / Clavito Actis — Warner Chappell Argentina.',
+    'Blues-rock desde 1992. Productor Warner Chappell. Clavos Band / Clavito Actis.',
   bio: {
-    headline: 'Clavito Actis / Clavos Band',
-    body: 'Fundada en 1992 por Clavito Actis (bajo y voz), Clavos Band es blues-rock argentino con identidad propia. Décadas de escenario, Cosquín Rock y colaboraciones con figuras del rock nacional. Hoy sigue grabando, produciendo y llevando el show a las redes.',
+    headline: 'Clavos Band / Clavito Actis',
+    body: 'Bajista, cantautor, autor, compositor y productor Warner Chappell. Estudió música con el pianista Osvaldo Tarantino, del quinteto de Astor Piazzolla. En 1992 armó Clavos Band y debutó en Rock & Pop, tocando en rockerías de CABA y el Gran Buenos Aires.',
     extended:
-      'Clavito Actis es músico y productor vinculado a Warner Chappell Argentina. De las rockerías de Capital al festival, el proyecto mantiene el mismo fuego: bajo, voz y canciones que se clavan.',
+      'Sus inicios fueron a los 14 años con guitarra clásica en el Instituto Williams y contrabajo en el Teatro Roma, en paralelo con el bajo eléctrico. A los 17 arrancó como sesionista con cantantes como Yuyu Da Silva y Altemar Dutra; después integró la banda de Oscar Alemán y tocó cuatro años junto a Luis Salinas.',
+    more: 'Participó en infinitas formaciones de nivel nacional e internacional, grabó en más de 50 discos de otros artistas y compartió escenario y estudio con figuras del rock, el blues y el folklore. Hoy sigue con Clavos Band — Sergio Biagetti en batería y Zurdo Pérez en guitarra — produciendo material nuevo y saliendo de gira.',
   },
+  training: [
+    {
+      title: 'Osvaldo Tarantino',
+      detail: 'Estudio con el pianista del quinteto de Astor Piazzolla.',
+    },
+    {
+      title: 'Instituto Williams',
+      detail: 'Guitarra clásica desde los 14 años.',
+    },
+    {
+      title: 'Teatro Roma',
+      detail: 'Contrabajo, en paralelo al bajo eléctrico.',
+    },
+  ],
   lineup: [
     {
       role: 'Bajo y voz',
       name: 'Clavito Actis',
-      note: 'Fundador · compositor · productor',
+      note: 'Fundador · compositor · productor Warner Chappell',
     },
     {
       role: 'Guitarra',
       name: 'Zurdo Pérez',
-      note: 'Formación en vivo',
+      note: 'Formación actual',
     },
     {
       role: 'Batería',
       name: 'Sergio Biagetti',
-      note: 'Formación en vivo',
+      note: 'Formación actual',
+    },
+  ],
+  collaborations: [
+    'Javier Martínez (Manal)',
+    'Ricardo Iorio',
+    'Claudio “Tano” Marciello',
+    'Willy Quiroga (Vox Dei)',
+    'Lito Vitale',
+    'Luis Salinas',
+    'Oscar Alemán',
+    'Deacon Jones',
+    'Kenny Kirkland',
+    'Juanjo Hermida',
+    'Hugo Méndez',
+    'Alejandro Medina',
+    'Daniel Maza',
+    'Vitico',
+    'Maxi Trusso',
+    'Fernando Scarcella',
+    'Alambre González',
+    'Jorge Polaco',
+  ],
+  endorsements: [
+    {
+      brand: 'Gallien-Krueger',
+      detail: 'Endorse de la marca (amplificación).',
+    },
+    {
+      brand: 'Music Man / Ernie Ball',
+      detail: 'Desde 2014, bajo Sterling 34.',
     },
   ],
   links: {
@@ -61,16 +106,34 @@ export const artist = {
   ],
   tracks: [
     {
-      title: 'Lo haremos en el medio de la carretera',
-      album: 'Mutando',
-      year: '2015',
+      title: 'Andinia',
+      album: 'Iorio con Clavos Band',
+      year: '2025',
+      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+    },
+    {
+      title: 'Melodía Morfina',
+      album: 'con Maxi Trusso · Ricardo Iorio',
+      year: '2025',
       href: 'https://youtube.com/@Clavosband',
     },
     {
-      title: 'Perrita rubia',
-      album: 'Esclavo del Rock',
-      year: '2010',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+      title: 'Positivo',
+      album: 'Javier Martínez · Clavito · Tano Marciello',
+      year: '2025',
+      href: 'https://youtube.com/@Clavosband',
+    },
+    {
+      title: 'Calle, vereda y cordón',
+      album: 'con Ricardo Iorio',
+      year: '2023',
+      href: 'https://youtube.com/@Clavosband',
+    },
+    {
+      title: 'Solo un final',
+      album: 'con Tano Marciello · Fernando Scarcella',
+      year: '2020',
+      href: 'https://youtube.com/@Clavosband',
     },
     {
       title: 'Pappo Blues',
@@ -78,58 +141,129 @@ export const artist = {
       year: '2010',
       href: 'https://audiomack.com/clavos-band-1/song/pappo-blues',
     },
-    {
-      title: 'Señor Silver',
-      album: 'Mutando',
-      year: '2015',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
-    },
-    {
-      title: 'Andinia',
-      album: 'Singles',
-      year: '2024',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
-    },
   ],
   albums: [
-    { title: 'El Jardín de mi Tía', year: '2025', note: 'Nuevo material' },
-    { title: 'Ama', year: '2021', note: 'Happy Together Records' },
     {
       title: 'Clavos Band A Continuación',
       year: '2019',
-      note: 'Etapa reciente',
+      note: 'Soporte digital · shows y telonero de Iorio',
     },
-    { title: 'Mutando', year: '2015', note: 'Estudios ION · Señor Silver' },
-    { title: 'Esclavo del Rock', year: '2010', note: 'Con invitados de peso' },
-    { title: 'Track 1', year: '2006', note: 'Almafuerte y Vox Dei' },
-    { title: 'Betty Blues en vivo', year: '2001', note: 'Registro en vivo' },
-    { title: 'Brujita de cartón', year: '1995', note: 'Álbum debut' },
+    {
+      title: 'Mutando',
+      year: '2015',
+      note: 'Estudios Ion · Señor Silver',
+    },
+    {
+      title: 'Esclavo del Rock',
+      year: '2010',
+      note: 'Con Totti Gieco (Jóvenes Pordioseros)',
+    },
+    {
+      title: 'Poder del Bajo',
+      year: '2010',
+      note: 'Producción con Marcelo Roascio · Medina, Maza, Quiroga, Vitico',
+    },
+    {
+      title: 'Track Uno',
+      year: '2005',
+      note: 'GLD · Iorio, Tano Marciello, Willy y Simón Quiroga (Vox Dei)',
+    },
+    {
+      title: 'Clavos Band en vivo Betty Blues',
+      year: '2001',
+      note: 'Registro en vivo',
+    },
+    {
+      title: 'Rock Video CBA',
+      year: '1997',
+      note: 'Video / registro',
+    },
+    {
+      title: 'Brujita de cartón',
+      year: '1995',
+      note: 'Debut discográfico · sello ATC',
+    },
   ],
   milestones: [
     {
+      year: '14 años',
+      title: 'Formación clásica',
+      detail:
+        'Guitarra en el Instituto Williams y contrabajo en el Teatro Roma; en paralelo, bajo eléctrico.',
+    },
+    {
+      year: '17 años',
+      title: 'Sesionista',
+      detail:
+        'Trabaja con cantantes como Yuyu Da Silva y Altemar Dutra; después Oscar Alemán y cuatro años con Luis Salinas.',
+    },
+    {
       year: '1992',
       title: 'Nace Clavos Band',
-      detail: 'Clavito Actis arma el proyecto en Buenos Aires.',
+      detail: 'Debut en Rock & Pop; circuitos de CABA y Gran Buenos Aires.',
     },
     {
       year: '1995',
       title: 'Brujita de cartón',
-      detail: 'Primer disco.',
+      detail: 'Primer disco (ATC). Parceria con Javier Martínez (Manal).',
+    },
+    {
+      year: '2005',
+      title: 'Track Uno',
+      detail:
+        'GLD con invitados: Ricardo Iorio, Tano Marciello, Willy Quiroga y Vox Dei.',
     },
     {
       year: '2007',
       title: 'Cosquín Rock',
-      detail: 'Presentación en el festival.',
+      detail: 'Clavos Band en el festival.',
     },
     {
       year: '2010',
-      title: 'Esclavo del Rock',
-      detail: 'Quinto álbum con invitados.',
+      title: 'Esclavo del Rock · Poder del Bajo',
+      detail:
+        'Disco propio y producción del compilado de bajistas. Endorse Gallien-Krueger.',
     },
     {
-      year: 'Hoy',
-      title: 'Warner Chappell',
-      detail: 'Músico y productor; material nuevo en Instagram y YouTube.',
+      year: '2014',
+      title: 'Music Man / Ernie Ball',
+      detail: 'Endorse del bajo Sterling 34.',
+    },
+    {
+      year: '2016',
+      title: '50 años del rock nacional',
+      detail:
+        'Shows con Willy Quiroga (Vox Dei) y Javier Martínez (Manal) en Vorterix Rosario y Gran Rex.',
+    },
+    {
+      year: '2018–19',
+      title: 'A Continuación',
+      detail:
+        'CD digital; telonero de Ricardo Iorio; grabaciones con Iorio y amigos.',
+    },
+    {
+      year: '2020',
+      title: 'Pandemia en redes',
+      detail:
+        'Shows online y video de Solo un final con Tano Marciello y Fernando Scarcella (CM TV).',
+    },
+    {
+      year: '2021',
+      title: 'Sesiones en Pilar Music',
+      detail:
+        'Grabación con Scarcella e invitados: Alambre González, Hugo Méndez, Patán Vidal, Miguel Tallarita, Sol Ulloa.',
+    },
+    {
+      year: '2023',
+      title: 'Teatro UOCRA',
+      detail:
+        'Show propio; graba Calle, vereda y cordón con Ricardo Iorio.',
+    },
+    {
+      year: '2025',
+      title: 'Material nuevo',
+      detail:
+        'Positivo (Martínez / Actis / Marciello), Melodía Morfina con Maxi Trusso e Iorio, Andinia (Iorio con Clavos Band).',
     },
   ],
   photos: [
