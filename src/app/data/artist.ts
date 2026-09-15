@@ -47,6 +47,7 @@ export const artist = {
     'Ricardo Iorio',
     'Claudio “Tano” Marciello',
     'Willy Quiroga (Vox Dei)',
+    'Simón Quiroga (Vox Dei)',
     'Lito Vitale',
     'Luis Salinas',
     'Oscar Alemán',
@@ -54,13 +55,85 @@ export const artist = {
     'Kenny Kirkland',
     'Juanjo Hermida',
     'Hugo Méndez',
+    'Osvaldo “Pilu” Camacho',
+    'Osvaldo Avena',
+    'Ricardo Báez',
+    'Carlinhos Da Silva',
+    'Yeye López',
+    'José María Núñez',
+    'Darío el Inimitable',
+    'Marcelo Roascio',
+    'Claudio Leal Dasso',
     'Alejandro Medina',
     'Daniel Maza',
     'Vitico',
+    'Beto Ceriotti',
+    'Nahuel Antuña',
+    'Gustavo Zavala',
+    'Carlos Gardellini',
+    'Totti Gieco (Jóvenes Pordioseros)',
     'Maxi Trusso',
     'Fernando Scarcella',
     'Alambre González',
+    'Patán Vidal',
+    'Miguel Tallarita',
+    'Sol Ulloa',
+    'Paulo Sergio Paiva',
+    'Paki Balaguer',
+    'Ana María Giunta',
     'Jorge Polaco',
+  ],
+  projects: [
+    {
+      title: 'Vudú · homenaje a Jobim y Vinicius',
+      detail:
+        'Con el cantante Paulo Sergio Paiva. CD para el sello Magenta.',
+    },
+    {
+      title: 'Coalition',
+      detail: 'Participación en banda de metal.',
+    },
+    {
+      title: 'Basta de boludos',
+      detail:
+        'Javier Martínez con Clavos Band en dos tracks del disco.',
+    },
+    {
+      title: 'Diemen Noord',
+      detail: '2012: Clavito Actis en el segundo álbum de la banda.',
+    },
+    {
+      title: 'El Tutor',
+      detail:
+        'Musicalización de la obra junto a Paki Balaguer, con el cineasta Jorge Polaco (Kindergarten).',
+    },
+    {
+      title: 'Los sueños de Nini',
+      detail: 'Musicalización de la obra con Ana María Giunta.',
+    },
+    {
+      title: 'Rock y Fierros',
+      detail:
+        'Compilado con La Naranja, Negro García López, Polos Rock, La 25 y La Trifásica. Presentado en CM — Canal de la Música, con participación de Lito Vitale.',
+    },
+    {
+      title: 'Poder del Bajo (2010)',
+      detail:
+        'Producción con Marcelo Roascio. Bajistas: Alejandro Medina, Daniel Maza, Willy Quiroga, Beto Ceriotti, Vitico, Nahuel Antuña y Gustavo Zavala.',
+    },
+    {
+      title: 'Pelo Cárdenas',
+      detail: 'Grabación del CD junto a Ricardo Iorio.',
+    },
+    {
+      title: 'Iorio y amigos',
+      detail:
+        'Participación en el disco y shows; material nuevo también en 2022.',
+    },
+    {
+      title: 'Dinamita Veloso',
+      detail: '2022: producción de material nuevo en paralelo a Clavos Band.',
+    },
   ],
   endorsements: [
     {
@@ -161,12 +234,17 @@ export const artist = {
     {
       title: 'Poder del Bajo',
       year: '2010',
-      note: 'Producción con Marcelo Roascio · Medina, Maza, Quiroga, Vitico',
+      note: 'Prod. Marcelo Roascio · Medina, Maza, Quiroga, Ceriotti, Vitico, Antuña, Zavala',
+    },
+    {
+      title: 'Rock y Fierros',
+      year: '2010',
+      note: 'Compilado · La Naranja, Negro García López, Polos Rock, La 25, La Trifásica · CM',
     },
     {
       title: 'Track Uno',
       year: '2005',
-      note: 'GLD · Iorio, Tano Marciello, Willy y Simón Quiroga (Vox Dei)',
+      note: 'GLD · Iorio, Tano Marciello, Willy y Simón Quiroga (Vox Dei), Carlos Gardellini',
     },
     {
       title: 'Clavos Band en vivo Betty Blues',
@@ -205,13 +283,20 @@ export const artist = {
     {
       year: '1995',
       title: 'Brujita de cartón',
-      detail: 'Primer disco (ATC). Parceria con Javier Martínez (Manal).',
+      detail:
+        'Primer disco (ATC). Parceria con Javier Martínez (Manal) y canciones como Pappo Blues.',
+    },
+    {
+      year: 'c. 2000',
+      title: 'Cine y teatro',
+      detail:
+        'Musicaliza El Tutor con Paki Balaguer y Jorge Polaco, y Los sueños de Nini con Ana María Giunta.',
     },
     {
       year: '2005',
       title: 'Track Uno',
       detail:
-        'GLD con invitados: Ricardo Iorio, Tano Marciello, Willy Quiroga y Vox Dei.',
+        'GLD con invitados: Ricardo Iorio, Tano Marciello, Willy y Simón Quiroga (Vox Dei) y Carlos Gardellini.',
     },
     {
       year: '2007',
@@ -222,7 +307,12 @@ export const artist = {
       year: '2010',
       title: 'Esclavo del Rock · Poder del Bajo',
       detail:
-        'Disco propio y producción del compilado de bajistas. Endorse Gallien-Krueger.',
+        'Disco propio, compilado de bajistas y Rock y Fierros en CM. Endorse Gallien-Krueger.',
+    },
+    {
+      year: '2012',
+      title: 'Diemen Noord',
+      detail: 'Participa en el segundo álbum de la banda.',
     },
     {
       year: '2014',
@@ -239,7 +329,7 @@ export const artist = {
       year: '2018–19',
       title: 'A Continuación',
       detail:
-        'CD digital; telonero de Ricardo Iorio; grabaciones con Iorio y amigos.',
+        'CD digital; telonero de Ricardo Iorio; grabaciones con Iorio, Pelo Cárdenas e Iorio y amigos.',
     },
     {
       year: '2020',
@@ -252,6 +342,12 @@ export const artist = {
       title: 'Sesiones en Pilar Music',
       detail:
         'Grabación con Scarcella e invitados: Alambre González, Hugo Méndez, Patán Vidal, Miguel Tallarita, Sol Ulloa.',
+    },
+    {
+      year: '2022',
+      title: 'Iorio y Dinamita Veloso',
+      detail:
+        'Nuevo material con Ricardo Iorio (Iorio y amigos) y producción de Dinamita Veloso.',
     },
     {
       year: '2023',

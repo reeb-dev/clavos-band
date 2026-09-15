@@ -134,6 +134,33 @@
       </div>
     </section>
 
+    <!-- PROYECTOS -->
+    <section class="section section--border">
+      <div class="wrap">
+        <div class="section__head">
+          <div>
+            <p class="label">TAMBIÉN</p>
+            <h2>Proyectos y obras</h2>
+            <p class="muted">
+              Sesiones, compilados, cine, teatro y producciones fuera del disco
+              propio de Clavos Band.
+            </p>
+          </div>
+        </div>
+        <ul class="projects">
+          @for (item of artist.projects; track item.title) {
+            <li>
+              <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
+              <div>
+                <p class="projects__title">{{ item.title }}</p>
+                <p class="muted small">{{ item.detail }}</p>
+              </div>
+            </li>
+          }
+        </ul>
+      </div>
+    </section>
+
     <!-- FOTOS -->
     <section id="fotos" class="section">
       <div class="wrap">
