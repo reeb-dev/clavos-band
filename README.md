@@ -1,22 +1,28 @@
 # Clavos Band · Clavito Actis
 
-Landing one-page del artista **Clavos Band / Clavito Actis**: blues-rock argentino con links a Instagram, Spotify y Audiomack, bio y discografía destacada.
+Landing one-page del artista **Clavos Band / Clavito Actis**.
 
-## Correr en local
+## Ver la web (en este entorno Cursor)
+
+El server corre en la máquina del agente. Abrí **este link desde el chat de Cursor** (así se abre el puerto reenviado):
+
+**http://127.0.0.1:3847**
+
+> Si escribís `localhost` en Chrome afuera de Cursor, no va a cargar: esa es tu PC, no este entorno.
+
+## Correr vos
 
 ```bash
 npm install
-npm run preview   # build + producción (más rápido)
-# o: npm run dev
+npm run preview
 ```
 
-Abrí [http://localhost:43127](http://localhost:43127).
+Puerto: **3847**
 
 ## Stack
 
-- Next.js (App Router) + TypeScript
-- Tailwind CSS + shadcn/ui
+Next.js + TypeScript + Tailwind + shadcn/ui
 
 ## Contenido
 
-Los datos del artista (bio, discos, links) están en `src/data/artist.ts`. Para sumar YouTube u otras redes, agregá el link ahí.
+Datos en `src/data/artist.ts`.
