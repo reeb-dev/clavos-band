@@ -327,15 +327,24 @@
     <section id="discos" class="section section--border">
       <div class="wrap">
         <h2>Discografía</h2>
+        <p class="muted">Cada disco abre en Spotify.</p>
         <ol class="list">
           @for (album of artist.albums; track album.title; let i = $index) {
-            <li class="list__row list__row--static">
-              <span class="list__num">{{ pad(i + 1) }}</span>
-              <span>
-                <span class="list__title">{{ album.title }}</span>
-                <span class="list__meta">{{ album.note }}</span>
-              </span>
-              <span class="list__year">{{ album.year }}</span>
+            <li>
+              <a
+                class="list__row"
+                [href]="album.href"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="list__num">{{ pad(i + 1) }}</span>
+                <span>
+                  <span class="list__title">{{ album.title }}</span>
+                  <span class="list__meta">{{ album.note }}</span>
+                </span>
+                <span class="list__year">{{ album.year }}</span>
+                <span class="list__action">SPOTIFY</span>
+              </a>
             </li>
           }
         </ol>
@@ -345,7 +354,7 @@
             [href]="artist.links.spotify"
             target="_blank"
             rel="noopener noreferrer"
-            >Abrir en Spotify</a
+            >Ver artista en Spotify</a
           >
         </div>
       </div>

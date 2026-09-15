@@ -443,11 +443,13 @@ h2 {
 
 .list__row {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: auto 1fr auto auto;
   gap: 1rem;
   align-items: baseline;
   padding: 1.25rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: inherit;
 }
 
 .list__row:hover {
