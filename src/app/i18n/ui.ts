@@ -68,6 +68,8 @@ export type UiCopy = {
   lang: {
     es: string;
     en: string;
+    flagEs: string;
+    flagEn: string;
     aria: string;
   };
   alts: {
@@ -151,6 +153,8 @@ export const ui: Record<Lang, UiCopy> = {
     lang: {
       es: 'ES',
       en: 'EN',
+      flagEs: '🇦🇷',
+      flagEn: '🇺🇸',
       aria: 'Cambiar idioma',
     },
     alts: {
@@ -232,6 +236,8 @@ export const ui: Record<Lang, UiCopy> = {
     lang: {
       es: 'ES',
       en: 'EN',
+      flagEs: '🇦🇷',
+      flagEn: '🇺🇸',
       aria: 'Switch language',
     },
     alts: {

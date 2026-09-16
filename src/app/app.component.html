@@ -32,7 +32,8 @@
             [class.lang__btn--active]="lang() === 'es'"
             (click)="setLang('es')"
           >
-            {{ t().lang.es }}
+            <span class="lang__flag" aria-hidden="true">{{ t().lang.flagEs }}</span>
+            <span>{{ t().lang.es }}</span>
           </button>
           <span class="lang__sep" aria-hidden="true">/</span>
           <button
@@ -41,7 +42,8 @@
             [class.lang__btn--active]="lang() === 'en'"
             (click)="setLang('en')"
           >
-            {{ t().lang.en }}
+            <span class="lang__flag" aria-hidden="true">{{ t().lang.flagEn }}</span>
+            <span>{{ t().lang.en }}</span>
           </button>
         </div>
       </div>

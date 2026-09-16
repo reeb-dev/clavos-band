@@ -189,6 +189,15 @@ h2 {
   padding: 0.15rem 0.25rem;
   cursor: pointer;
   line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.lang__flag {
+  font-size: 0.95rem;
+  letter-spacing: 0;
+  line-height: 1;
 }
 
 .lang__btn:hover {
