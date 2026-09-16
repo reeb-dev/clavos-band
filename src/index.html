@@ -22,13 +22,36 @@
     <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://clavitoactis.com/" />
 
-    <!-- Favicons -->
-    <link rel="icon" href="favicon.ico" sizes="any" />
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
-    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <!-- Favicons (URLs absolutas para Google) -->
+    <link rel="icon" href="https://clavitoactis.com/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://clavitoactis.com/favicon-16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://clavitoactis.com/favicon-32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="48x48"
+      href="https://clavitoactis.com/favicon-48.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://clavitoactis.com/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="https://clavitoactis.com/site.webmanifest" />
+    <link
+      rel="image_src"
+      href="https://clavitoactis.com/photos/hq-spotify.jpg"
+    />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -77,8 +100,22 @@
         "alternateName": ["Clavito Actis", "Clavo's Band"],
         "description": "Blues-rock argentino desde 1992. Clavito Actis: bajista, cantautor y productor Warner Chappell.",
         "url": "https://clavitoactis.com/",
-        "image": "https://clavitoactis.com/photos/hq-spotify.jpg",
-        "logo": "https://clavitoactis.com/photos/logo-clavos.jpg",
+        "image": [
+          {
+            "@type": "ImageObject",
+            "url": "https://clavitoactis.com/photos/hq-spotify.jpg",
+            "width": 640,
+            "height": 640,
+            "caption": "Clavito Actis con bajo Sterling"
+          },
+          "https://clavitoactis.com/photos/hq-band-studio.jpg"
+        ],
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://clavitoactis.com/apple-touch-icon.png",
+          "width": 180,
+          "height": 180
+        },
         "genre": ["Blues rock", "Rock argentino"],
         "foundingDate": "1992",
         "foundingLocation": {
