@@ -4,7 +4,7 @@ Landing oficial (Angular) de **Clavos Band / Clavito Actis**.
 
 ## Demo
 
-- GitHub Pages: https://reeb-dev.github.io/clavos-band/
+- GitHub Pages: https://clavitoactis.com/
 
 ## Desarrollo local
 
@@ -17,7 +17,23 @@ npm start
 ## Build producción
 
 ```bash
-npm run build -- --configuration=production --base-href=/clavos-band/
+npm run build -- --configuration=production --base-href=/
 ```
 
 El deploy a GitHub Pages corre automático con GitHub Actions en cada push a `main`.
+
+
+## Dominio personalizado ()
+
+En el DNS del dominio configurá:
+
+**Apex ()** — registros A:
+- 
+- 
+- 
+- 
+
+**www** — CNAME:
+-  → 
+
+En GitHub → Settings → Pages → Custom domain:  (HTTPS Enforce).
