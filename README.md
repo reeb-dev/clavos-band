@@ -22,18 +22,29 @@ npm run build -- --configuration=production --base-href=/
 
 El deploy a GitHub Pages corre automático con GitHub Actions en cada push a `main`.
 
+## Dominio personalizado (`clavitoactis.com`)
 
-## Dominio personalizado ()
+En el panel DNS de tu registrador (donde compraste el dominio), creá estos registros:
 
-En el DNS del dominio configurá:
+### Apex — `clavitoactis.com` (tipo A)
 
-**Apex ()** — registros A:
-- 
-- 
-- 
-- 
+| Tipo | Nombre / Host | Valor |
+|------|---------------|--------|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
 
-**www** — CNAME:
--  → 
+### www — opcional (tipo CNAME)
 
-En GitHub → Settings → Pages → Custom domain:  (HTTPS Enforce).
+| Tipo | Nombre / Host | Valor |
+|------|---------------|--------|
+| CNAME | `www` | `reeb-dev.github.io` |
+
+### Después
+
+1. Esperá la propagación DNS (puede tardar de minutos a unas horas).
+2. En GitHub → **Settings → Pages → Custom domain** debería figurar `clavitoactis.com`.
+3. Activá **Enforce HTTPS** cuando GitHub lo permita (después de verificar el dominio).
+
+El repo ya tiene el archivo `CNAME` y el sitio buildéa con `base-href=/`.
