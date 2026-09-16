@@ -1,4 +1,130 @@
-export const artist = {
+import type { Lang } from '../i18n/lang';
+
+const links = {
+  instagram: 'https://www.instagram.com/clavosband_clavito369/',
+  spotify: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+  audiomack: 'https://audiomack.com/clavos-band-1',
+  youtube: 'https://youtube.com/@Clavosband',
+} as const;
+
+const collaborations = [
+  'Javier Martínez (Manal)',
+  'Ricardo Iorio',
+  'Claudio “Tano” Marciello',
+  'Willy Quiroga (Vox Dei)',
+  'Simón Quiroga (Vox Dei)',
+  'Lito Vitale',
+  'Luis Salinas',
+  'Oscar Alemán',
+  'Deacon Jones',
+  'Kenny Kirkland',
+  'Juanjo Hermida',
+  'Hugo Méndez',
+  'Osvaldo “Pilu” Camacho',
+  'Osvaldo Avena',
+  'Ricardo Báez',
+  'Carlinhos Da Silva',
+  'Yeye López',
+  'José María Núñez',
+  'Darío el Inimitable',
+  'Marcelo Roascio',
+  'Claudio Leal Dasso',
+  'Alejandro Medina',
+  'Daniel Maza',
+  'Vitico',
+  'Beto Ceriotti',
+  'Nahuel Antuña',
+  'Gustavo Zavala',
+  'Carlos Gardellini',
+  'Totti Gieco (Jóvenes Pordioseros)',
+  'Maxi Trusso',
+  'Fernando Scarcella',
+  'Alambre González',
+  'Patán Vidal',
+  'Miguel Tallarita',
+  'Sol Ulloa',
+  'Paulo Sergio Paiva',
+  'Paki Balaguer',
+  'Ana María Giunta',
+  'Jorge Polaco',
+] as const;
+
+const tracksShared = [
+  {
+    title: 'Andinia',
+    album: 'Andinia',
+    year: '2025',
+    href: 'https://open.spotify.com/album/5EmwyjngBb0YVNILbIc1l2',
+  },
+  {
+    title: 'Melodía Morfina',
+    album: 'Shadows of Life – Melodía Morfina',
+    year: '2025',
+    href: 'https://open.spotify.com/album/2UwZq04cZq9JH1ukAG3MGE',
+  },
+  {
+    title: 'Positivo',
+    album: 'Clavos Band',
+    year: '2025',
+    href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+  },
+  {
+    title: 'Calle, vereda y cordón',
+    album: 'Clavos Band',
+    year: '2023',
+    href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+  },
+  {
+    title: 'Solo un final',
+    album: 'Clavos Band',
+    year: '2020',
+    href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+  },
+  {
+    title: 'Pappo Blues',
+    album: 'Esclavo del Rock',
+    year: '2010',
+    href: 'https://open.spotify.com/album/3IufhLNewoxUvBB8q2x05P',
+  },
+] as const;
+
+type ArtistContent = {
+  name: string;
+  lead: string;
+  tagline: string;
+  pitch: string;
+  bio: {
+    headline: string;
+    body: string;
+    extended: string;
+    more: string;
+  };
+  training: { title: string; detail: string }[];
+  lineup: { role: string; name: string; note: string }[];
+  collaborations: readonly string[];
+  projects: { title: string; detail: string }[];
+  endorsements: { brand: string; detail: string }[];
+  links: typeof links;
+  platforms: {
+    id: string;
+    label: string;
+    description: string;
+    href: string;
+  }[];
+  tracks: readonly {
+    title: string;
+    album: string;
+    year: string;
+    href: string;
+  }[];
+  albums: { title: string; year: string; note: string; href: string }[];
+  milestones: { year: string; title: string; detail: string }[];
+  photos: { src: string; alt: string; caption: string; wide: boolean }[];
+  quotes: { text: string; source: string }[];
+  booking: { headline: string; body: string };
+};
+
+const es: ArtistContent = {
   name: 'Clavos Band',
   lead: 'Clavito Actis',
   tagline: 'Músico, bajista, cantautor y productor.',
@@ -42,52 +168,11 @@ export const artist = {
       note: 'Formación actual',
     },
   ],
-  collaborations: [
-    'Javier Martínez (Manal)',
-    'Ricardo Iorio',
-    'Claudio “Tano” Marciello',
-    'Willy Quiroga (Vox Dei)',
-    'Simón Quiroga (Vox Dei)',
-    'Lito Vitale',
-    'Luis Salinas',
-    'Oscar Alemán',
-    'Deacon Jones',
-    'Kenny Kirkland',
-    'Juanjo Hermida',
-    'Hugo Méndez',
-    'Osvaldo “Pilu” Camacho',
-    'Osvaldo Avena',
-    'Ricardo Báez',
-    'Carlinhos Da Silva',
-    'Yeye López',
-    'José María Núñez',
-    'Darío el Inimitable',
-    'Marcelo Roascio',
-    'Claudio Leal Dasso',
-    'Alejandro Medina',
-    'Daniel Maza',
-    'Vitico',
-    'Beto Ceriotti',
-    'Nahuel Antuña',
-    'Gustavo Zavala',
-    'Carlos Gardellini',
-    'Totti Gieco (Jóvenes Pordioseros)',
-    'Maxi Trusso',
-    'Fernando Scarcella',
-    'Alambre González',
-    'Patán Vidal',
-    'Miguel Tallarita',
-    'Sol Ulloa',
-    'Paulo Sergio Paiva',
-    'Paki Balaguer',
-    'Ana María Giunta',
-    'Jorge Polaco',
-  ],
+  collaborations,
   projects: [
     {
       title: 'Vudú · homenaje a Jobim y Vinicius',
-      detail:
-        'Con el cantante Paulo Sergio Paiva. CD para el sello Magenta.',
+      detail: 'Con el cantante Paulo Sergio Paiva. CD para el sello Magenta.',
     },
     {
       title: 'Coalition',
@@ -95,8 +180,7 @@ export const artist = {
     },
     {
       title: 'Basta de boludos',
-      detail:
-        'Javier Martínez con Clavos Band en dos tracks del disco.',
+      detail: 'Javier Martínez con Clavos Band en dos tracks del disco.',
     },
     {
       title: 'Diemen Noord',
@@ -145,76 +229,34 @@ export const artist = {
       detail: 'Desde 2014, bajo Sterling 34.',
     },
   ],
-  links: {
-    instagram: 'https://www.instagram.com/clavosband_clavito369/',
-    spotify: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
-    audiomack: 'https://audiomack.com/clavos-band-1',
-    youtube: 'https://youtube.com/@Clavosband',
-  },
+  links,
   platforms: [
     {
       id: 'instagram',
       label: 'Instagram',
       description: '@clavosband_clavito369',
-      href: 'https://www.instagram.com/clavosband_clavito369/',
+      href: links.instagram,
     },
     {
       id: 'youtube',
       label: 'YouTube',
       description: '@Clavosband',
-      href: 'https://youtube.com/@Clavosband',
+      href: links.youtube,
     },
     {
       id: 'spotify',
       label: 'Spotify',
       description: 'Catálogo completo',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
+      href: links.spotify,
     },
     {
       id: 'audiomack',
       label: 'Audiomack',
       description: 'Temas y singles',
-      href: 'https://audiomack.com/clavos-band-1',
+      href: links.audiomack,
     },
   ],
-  tracks: [
-    {
-      title: 'Andinia',
-      album: 'Andinia',
-      year: '2025',
-      href: 'https://open.spotify.com/album/5EmwyjngBb0YVNILbIc1l2',
-    },
-    {
-      title: 'Melodía Morfina',
-      album: 'Shadows of Life – Melodía Morfina',
-      year: '2025',
-      href: 'https://open.spotify.com/album/2UwZq04cZq9JH1ukAG3MGE',
-    },
-    {
-      title: 'Positivo',
-      album: 'Clavos Band',
-      year: '2025',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
-    },
-    {
-      title: 'Calle, vereda y cordón',
-      album: 'Clavos Band',
-      year: '2023',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
-    },
-    {
-      title: 'Solo un final',
-      album: 'Clavos Band',
-      year: '2020',
-      href: 'https://open.spotify.com/artist/4b8GbUgdmvIoc0etR8puFz',
-    },
-    {
-      title: 'Pappo Blues',
-      album: 'Esclavo del Rock',
-      year: '2010',
-      href: 'https://open.spotify.com/album/3IufhLNewoxUvBB8q2x05P',
-    },
-  ],
+  tracks: tracksShared,
   albums: [
     {
       title: 'Andinia',
@@ -443,6 +485,374 @@ export const artist = {
     headline: 'Shows y prensa',
     body: 'Seguí el día a día en Instagram. YouTube para shows y videos. Para fechas o prensa, escribinos por las redes.',
   },
-} as const;
+};
 
-export type Artist = typeof artist;
+const en: ArtistContent = {
+  name: 'Clavos Band',
+  lead: 'Clavito Actis',
+  tagline: 'Musician, bassist, singer-songwriter, and producer.',
+  pitch:
+    'Blues-rock since 1992. Warner Chappell producer. Clavos Band / Clavito Actis.',
+  bio: {
+    headline: 'Clavos Band / Clavito Actis',
+    body: 'Bassist, singer-songwriter, author, composer, and Warner Chappell producer. He studied music with pianist Osvaldo Tarantino of Astor Piazzolla’s quintet. In 1992 he formed Clavos Band and debuted on Rock & Pop, playing rock clubs across Buenos Aires City and Greater Buenos Aires.',
+    extended:
+      'He started at 14 with classical guitar at the Williams Institute and double bass at Teatro Roma, alongside electric bass. At 17 he began as a session player with singers such as Yuyu Da Silva and Altemar Dutra; later he joined Oscar Alemán’s band and spent four years with Luis Salinas.',
+    more: 'He has played in countless national and international lineups, recorded on more than 50 albums for other artists, and shared the stage and studio with figures from rock, blues, and folk. Today he continues with Clavos Band — Sergio Biagetti on drums and Zurdo Pérez on guitar — producing new material and touring.',
+  },
+  training: [
+    {
+      title: 'Osvaldo Tarantino',
+      detail: 'Studied with the pianist from Astor Piazzolla’s quintet.',
+    },
+    {
+      title: 'Williams Institute',
+      detail: 'Classical guitar from age 14.',
+    },
+    {
+      title: 'Teatro Roma',
+      detail: 'Double bass, alongside electric bass.',
+    },
+  ],
+  lineup: [
+    {
+      role: 'Bass & vocals',
+      name: 'Clavito Actis',
+      note: 'Founder · songwriter · Warner Chappell producer',
+    },
+    {
+      role: 'Guitar',
+      name: 'Zurdo Pérez',
+      note: 'Current lineup',
+    },
+    {
+      role: 'Drums',
+      name: 'Sergio Biagetti',
+      note: 'Current lineup',
+    },
+  ],
+  collaborations,
+  projects: [
+    {
+      title: 'Vudú · tribute to Jobim and Vinicius',
+      detail: 'With singer Paulo Sergio Paiva. CD for the Magenta label.',
+    },
+    {
+      title: 'Coalition',
+      detail: 'Appearance with a metal band.',
+    },
+    {
+      title: 'Basta de boludos',
+      detail: 'Javier Martínez with Clavos Band on two tracks of the album.',
+    },
+    {
+      title: 'Diemen Noord',
+      detail: '2012: Clavito Actis on the band’s second album.',
+    },
+    {
+      title: 'El Tutor',
+      detail:
+        'Score for the play with Paki Balaguer and filmmaker Jorge Polaco (Kindergarten).',
+    },
+    {
+      title: 'Los sueños de Nini',
+      detail: 'Score for the play with Ana María Giunta.',
+    },
+    {
+      title: 'Rock y Fierros',
+      detail:
+        'Compilation with La Naranja, Negro García López, Polos Rock, La 25, and La Trifásica. Presented on CM — Canal de la Música, with Lito Vitale.',
+    },
+    {
+      title: 'Poder del Bajo (2010)',
+      detail:
+        'Production with Marcelo Roascio. Bassists: Alejandro Medina, Daniel Maza, Willy Quiroga, Beto Ceriotti, Vitico, Nahuel Antuña, and Gustavo Zavala.',
+    },
+    {
+      title: 'Pelo Cárdenas',
+      detail: 'CD recording with Ricardo Iorio.',
+    },
+    {
+      title: 'Iorio y amigos',
+      detail: 'Album and live shows; new material again in 2022.',
+    },
+    {
+      title: 'Dinamita Veloso',
+      detail: '2022: producing new material alongside Clavos Band.',
+    },
+  ],
+  endorsements: [
+    {
+      brand: 'Gallien-Krueger',
+      detail: 'Brand endorsee (amplification).',
+    },
+    {
+      brand: 'Music Man / Ernie Ball',
+      detail: 'Since 2014, Sterling 34 bass.',
+    },
+  ],
+  links,
+  platforms: [
+    {
+      id: 'instagram',
+      label: 'Instagram',
+      description: '@clavosband_clavito369',
+      href: links.instagram,
+    },
+    {
+      id: 'youtube',
+      label: 'YouTube',
+      description: '@Clavosband',
+      href: links.youtube,
+    },
+    {
+      id: 'spotify',
+      label: 'Spotify',
+      description: 'Full catalog',
+      href: links.spotify,
+    },
+    {
+      id: 'audiomack',
+      label: 'Audiomack',
+      description: 'Tracks & singles',
+      href: links.audiomack,
+    },
+  ],
+  tracks: tracksShared,
+  albums: [
+    {
+      title: 'Andinia',
+      year: '2025',
+      note: 'Iorio with Clavos Band',
+      href: 'https://open.spotify.com/album/5EmwyjngBb0YVNILbIc1l2',
+    },
+    {
+      title: 'Melodía Morfina',
+      year: '2025',
+      note: 'Shadows of Life · with Maxi Trusso and Iorio',
+      href: 'https://open.spotify.com/album/2UwZq04cZq9JH1ukAG3MGE',
+    },
+    {
+      title: 'Clavos Band A Continuación',
+      year: '2019',
+      note: 'Digital release · shows and opening for Iorio',
+      href: 'https://open.spotify.com/album/4ihjferlNfEVkqAPLpabrv',
+    },
+    {
+      title: 'Ama',
+      year: '2021',
+      note: 'On Spotify',
+      href: 'https://open.spotify.com/album/3UnqiHW6UDpQVivtidbb2G',
+    },
+    {
+      title: 'Mutando',
+      year: '2015',
+      note: 'Estudios Ion · Señor Silver',
+      href: 'https://open.spotify.com/album/426ko1VPcHkqA77pmKzO6N',
+    },
+    {
+      title: 'Esclavo del Rock',
+      year: '2010',
+      note: 'With Totti Gieco (Jóvenes Pordioseros)',
+      href: 'https://open.spotify.com/album/3IufhLNewoxUvBB8q2x05P',
+    },
+    {
+      title: 'El Blues de los Espejos',
+      year: '2010',
+      note: 'On Spotify',
+      href: 'https://open.spotify.com/album/75wLmeykmv9qDhSK73iJcx',
+    },
+    {
+      title: 'Track Uno',
+      year: '2005',
+      note: 'GLD · Iorio, Tano Marciello, Willy and Simón Quiroga (Vox Dei)',
+      href: 'https://open.spotify.com/album/49Blrj1EEz2vxBGokLRbVH',
+    },
+    {
+      title: 'El Jardín de mi Tía',
+      year: '2003',
+      note: 'On Spotify',
+      href: 'https://open.spotify.com/album/2fnPXfcjFzYsVVzLIr0kR3',
+    },
+    {
+      title: 'Clavos Band en vivo Betty Blues',
+      year: '2001',
+      note: 'Live recording',
+      href: 'https://open.spotify.com/album/3KYt7EOpgcl4qECtrDlTyI',
+    },
+    {
+      title: 'Brujita de cartón',
+      year: '1995',
+      note: 'Debut album · ATC label',
+      href: 'https://open.spotify.com/album/00xmhydLyNp6anDZLebdKP',
+    },
+  ],
+  milestones: [
+    {
+      year: 'Age 14',
+      title: 'Classical training',
+      detail:
+        'Guitar at the Williams Institute and double bass at Teatro Roma; electric bass in parallel.',
+    },
+    {
+      year: 'Age 17',
+      title: 'Session player',
+      detail:
+        'Works with singers such as Yuyu Da Silva and Altemar Dutra; later Oscar Alemán and four years with Luis Salinas.',
+    },
+    {
+      year: '1992',
+      title: 'Clavos Band is born',
+      detail:
+        'Debut on Rock & Pop; circuits across Buenos Aires City and Greater Buenos Aires.',
+    },
+    {
+      year: '1995',
+      title: 'Brujita de cartón',
+      detail:
+        'First album (ATC). Partnership with Javier Martínez (Manal) and songs like Pappo Blues.',
+    },
+    {
+      year: 'c. 2000',
+      title: 'Film & theater',
+      detail:
+        'Scores El Tutor with Paki Balaguer and Jorge Polaco, and Los sueños de Nini with Ana María Giunta.',
+    },
+    {
+      year: '2005',
+      title: 'Track Uno',
+      detail:
+        'GLD with guests: Ricardo Iorio, Tano Marciello, Willy and Simón Quiroga (Vox Dei), and Carlos Gardellini.',
+    },
+    {
+      year: '2007',
+      title: 'Cosquín Rock',
+      detail: 'Clavos Band at the festival.',
+    },
+    {
+      year: '2010',
+      title: 'Esclavo del Rock · Poder del Bajo',
+      detail:
+        'Own album, bassist compilation, and Rock y Fierros on CM. Gallien-Krueger endorsee.',
+    },
+    {
+      year: '2012',
+      title: 'Diemen Noord',
+      detail: 'Appears on the band’s second album.',
+    },
+    {
+      year: '2014',
+      title: 'Music Man / Ernie Ball',
+      detail: 'Endorsee for the Sterling 34 bass.',
+    },
+    {
+      year: '2016',
+      title: '50 years of Argentine rock',
+      detail:
+        'Shows with Willy Quiroga (Vox Dei) and Javier Martínez (Manal) at Vorterix Rosario and the Gran Rex.',
+    },
+    {
+      year: '2018–19',
+      title: 'A Continuación',
+      detail:
+        'Digital CD; opening for Ricardo Iorio; recordings with Iorio, Pelo Cárdenas, and Iorio y amigos.',
+    },
+    {
+      year: '2020',
+      title: 'Pandemic online',
+      detail:
+        'Online shows and the Solo un final video with Tano Marciello and Fernando Scarcella (CM TV).',
+    },
+    {
+      year: '2021',
+      title: 'Sessions at Pilar Music',
+      detail:
+        'Recording with Scarcella and guests: Alambre González, Hugo Méndez, Patán Vidal, Miguel Tallarita, Sol Ulloa.',
+    },
+    {
+      year: '2022',
+      title: 'Iorio and Dinamita Veloso',
+      detail:
+        'New material with Ricardo Iorio (Iorio y amigos) and production for Dinamita Veloso.',
+    },
+    {
+      year: '2023',
+      title: 'Teatro UOCRA',
+      detail:
+        'Own show; records Calle, vereda y cordón with Ricardo Iorio.',
+    },
+    {
+      year: '2025',
+      title: 'New material',
+      detail:
+        'Positivo (Martínez / Actis / Marciello), Melodía Morfina with Maxi Trusso and Iorio, Andinia (Iorio with Clavos Band).',
+    },
+  ],
+  photos: [
+    {
+      src: 'photos/hq-band-studio.jpg',
+      alt: 'Clavos Band in the recording studio',
+      caption: 'Studio · rock.com.ar',
+      wide: true,
+    },
+    {
+      src: 'photos/hq-spotify.jpg',
+      alt: 'Clavito Actis with Sterling bass',
+      caption: 'Bass · Spotify',
+      wide: false,
+    },
+    {
+      src: 'photos/hq-yt-show-01.jpg',
+      alt: 'Clavito Actis in a studio session',
+      caption: 'Session · YouTube',
+      wide: false,
+    },
+    {
+      src: 'photos/hq-clavito-radio.jpg',
+      alt: 'Clavito Actis on Radio Provincia',
+      caption: 'Radio Provincia',
+      wide: false,
+    },
+    {
+      src: 'photos/hq-yt-show-02.jpg',
+      alt: 'Clavos Band — YouTube video',
+      caption: 'Video',
+      wide: false,
+    },
+    {
+      src: 'photos/hq-yt-show-03.jpg',
+      alt: 'Clavos Band live',
+      caption: 'Live',
+      wide: false,
+    },
+    {
+      src: 'photos/post1.jpg',
+      alt: 'Clavito Actis live with bass',
+      caption: 'Instagram',
+      wide: false,
+    },
+    {
+      src: 'photos/post8.jpg',
+      alt: 'Clavito Actis at Warner Chappell Music',
+      caption: 'Warner Chappell',
+      wide: false,
+    },
+  ],
+  quotes: [
+    {
+      text: 'Music is soul and spirit, and the bond between people.',
+      source: 'Clavito Actis',
+    },
+  ],
+  booking: {
+    headline: 'Shows & press',
+    body: 'Follow day-to-day news on Instagram. YouTube for shows and videos. For dates or press, reach out on social media.',
+  },
+};
+
+export const artistByLang: Record<Lang, ArtistContent> = { es, en };
+
+/** @deprecated Prefer artistByLang[lang] — kept for any leftover imports */
+export const artist = es;
+
+export type Artist = ArtistContent;

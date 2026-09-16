@@ -2,6 +2,8 @@
 
 Landing oficial (Angular) de **Clavos Band / Clavito Actis**.
 
+Sitio bilingüe **ES / EN** — selector de idioma en la barra superior (se guarda en el navegador).
+
 ## Demo
 
 - GitHub Pages: https://clavitoactis.com/

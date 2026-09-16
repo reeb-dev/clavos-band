@@ -6,19 +6,44 @@
           ngSrc="photos/logo-clavos.jpg"
           width="48"
           height="48"
-          alt="Clavos Band"
+          [alt]="t().alts.logo"
           class="brand__logo"
           priority
         />
         <span>CLAVOS BAND</span>
       </a>
-      <div class="nav__links">
-        <a href="#artista">Artista</a>
-        <a href="#historia">Historia</a>
-        <a href="#fotos">Fotos</a>
-        <a href="#temas">Temas</a>
-        <a href="#escuchar">Escuchar</a>
-        <a href="#contacto" class="nav__hide-sm">Contacto</a>
+      <div class="nav__right">
+        <div class="nav__links">
+          <a href="#artista">{{ t().nav.artist }}</a>
+          <a href="#historia">{{ t().nav.history }}</a>
+          <a href="#fotos">{{ t().nav.photos }}</a>
+          <a href="#temas">{{ t().nav.tracks }}</a>
+          <a href="#escuchar">{{ t().nav.listen }}</a>
+          <a href="#contacto" class="nav__hide-sm">{{ t().nav.contact }}</a>
+        </div>
+        <div
+          class="lang"
+          role="group"
+          [attr.aria-label]="t().lang.aria"
+        >
+          <button
+            type="button"
+            class="lang__btn"
+            [class.lang__btn--active]="lang() === 'es'"
+            (click)="setLang('es')"
+          >
+            {{ t().lang.es }}
+          </button>
+          <span class="lang__sep" aria-hidden="true">/</span>
+          <button
+            type="button"
+            class="lang__btn"
+            [class.lang__btn--active]="lang() === 'en'"
+            (click)="setLang('en')"
+          >
+            {{ t().lang.en }}
+          </button>
+        </div>
       </div>
     </nav>
   </header>
@@ -29,7 +54,7 @@
       <img
         ngSrc="photos/hq-spotify.jpg"
         fill
-        alt="Clavito Actis con bajo"
+        [alt]="t().alts.hero"
         class="hero__bg"
         priority
       />
@@ -37,15 +62,15 @@
       <div class="hero__content">
         <div class="hero__eyebrow">
           <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
-          <p>{{ artist.lead }}</p>
+          <p>{{ artist().lead }}</p>
         </div>
-        <h1>{{ artist.name }}</h1>
-        <p class="hero__pitch">{{ artist.tagline }} {{ artist.pitch }}</p>
+        <h1>{{ artist().name }}</h1>
+        <p class="hero__pitch">{{ artist().tagline }} {{ artist().pitch }}</p>
         <div class="hero__ctas">
-          <a href="#escuchar" class="btn btn--primary">Escuchar</a>
+          <a href="#escuchar" class="btn btn--primary">{{ t().hero.listen }}</a>
           <a
             class="btn btn--outline"
-            [href]="artist.links.instagram"
+            [href]="artist().links.instagram"
             target="_blank"
             rel="noopener noreferrer"
             >Instagram</a
@@ -61,20 +86,20 @@
           <img
             ngSrc="photos/hq-spotify.jpg"
             fill
-            alt="Clavito Actis con bajo"
+            [alt]="t().alts.hero"
             class="artist__img"
             priority
           />
         </div>
         <div>
-          <p class="label">BIO</p>
-          <h2>{{ artist.bio.headline }}</h2>
-          <p class="lead">{{ artist.bio.body }}</p>
-          <p class="muted">{{ artist.bio.extended }}</p>
-          <p class="muted">{{ artist.bio.more }}</p>
+          <p class="label">{{ t().bio.label }}</p>
+          <h2>{{ artist().bio.headline }}</h2>
+          <p class="lead">{{ artist().bio.body }}</p>
+          <p class="muted">{{ artist().bio.extended }}</p>
+          <p class="muted">{{ artist().bio.more }}</p>
           <blockquote class="quote">
-            <p>“{{ artist.quotes[0].text }}”</p>
-            <footer>— {{ artist.quotes[0].source }}</footer>
+            <p>“{{ artist().quotes[0].text }}”</p>
+            <footer>— {{ artist().quotes[0].source }}</footer>
           </blockquote>
         </div>
       </div>
@@ -85,16 +110,13 @@
       <div class="wrap">
         <div class="section__head">
           <div>
-            <p class="label">OFICIO</p>
-            <h2>Formación y escuela</h2>
-            <p class="muted">
-              Del Instituto Williams y el Teatro Roma al estudio con Osvaldo
-              Tarantino, pianista del quinteto de Astor Piazzolla.
-            </p>
+            <p class="label">{{ t().craft.label }}</p>
+            <h2>{{ t().craft.title }}</h2>
+            <p class="muted">{{ t().craft.intro }}</p>
           </div>
         </div>
         <ul class="training">
-          @for (item of artist.training; track item.title) {
+          @for (item of artist().training; track item.title) {
             <li>
               <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
               <p class="training__title">{{ item.title }}</p>
@@ -103,7 +125,7 @@
           }
         </ul>
         <ul class="endorse">
-          @for (item of artist.endorsements; track item.brand) {
+          @for (item of artist().endorsements; track item.brand) {
             <li>
               <span class="endorse__brand">{{ item.brand }}</span>
               <span class="muted small">{{ item.detail }}</span>
@@ -118,16 +140,13 @@
       <div class="wrap">
         <div class="section__head">
           <div>
-            <p class="label">ESCENARIO Y ESTUDIO</p>
-            <h2>Colaboraciones</h2>
-            <p class="muted">
-              Más de 50 discos como sesionista y partnerías con el rock nacional
-              e invitados internacionales.
-            </p>
+            <p class="label">{{ t().collab.label }}</p>
+            <h2>{{ t().collab.title }}</h2>
+            <p class="muted">{{ t().collab.intro }}</p>
           </div>
         </div>
         <ul class="chips">
-          @for (name of artist.collaborations; track name) {
+          @for (name of artist().collaborations; track name) {
             <li>{{ name }}</li>
           }
         </ul>
@@ -139,16 +158,13 @@
       <div class="wrap">
         <div class="section__head">
           <div>
-            <p class="label">TAMBIÉN</p>
-            <h2>Proyectos y obras</h2>
-            <p class="muted">
-              Sesiones, compilados, cine, teatro y producciones fuera del disco
-              propio de Clavos Band.
-            </p>
+            <p class="label">{{ t().projects.label }}</p>
+            <h2>{{ t().projects.title }}</h2>
+            <p class="muted">{{ t().projects.intro }}</p>
           </div>
         </div>
         <ul class="projects">
-          @for (item of artist.projects; track item.title) {
+          @for (item of artist().projects; track item.title) {
             <li>
               <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
               <div>
@@ -166,12 +182,9 @@
       <div class="wrap">
         <div class="section__head">
           <div>
-            <p class="label">GALERÍA</p>
-            <h2>Escenario, estudio y camino</h2>
-            <p class="muted">
-              Clavito y la banda en vivo, en grabación y en prensa — el blues-rock
-              como se ve de cerca.
-            </p>
+            <p class="label">{{ t().gallery.label }}</p>
+            <h2>{{ t().gallery.title }}</h2>
+            <p class="muted">{{ t().gallery.intro }}</p>
           </div>
           <img
             ngSrc="photos/logo-clavos.jpg"
@@ -183,7 +196,7 @@
         </div>
 
         <div class="gallery">
-          @for (photo of artist.photos; track photo.src; let i = $index) {
+          @for (photo of artist().photos; track photo.src; let i = $index) {
             <figure class="gallery__item" [class.gallery__item--wide]="photo.wide">
               <img [ngSrc]="photo.src" fill [alt]="photo.alt" />
               <figcaption>
@@ -197,10 +210,10 @@
         <div class="mt">
           <a
             class="btn btn--outline"
-            [href]="artist.links.instagram"
+            [href]="artist().links.instagram"
             target="_blank"
             rel="noopener noreferrer"
-            >Ver más en Instagram</a
+            >{{ t().gallery.moreIg }}</a
           >
         </div>
       </div>
@@ -214,22 +227,22 @@
             ngSrc="photos/logo-clavos.jpg"
             width="72"
             height="72"
-            alt="Logo Clavos Band"
+            [alt]="t().alts.logo"
             class="strip__logo"
           />
-          <p>Tres clavos. Una banda.</p>
+          <p>{{ t().strip.line }}</p>
         </div>
-        <a href="#temas" class="btn btn--black">Poner los temas</a>
+        <a href="#temas" class="btn btn--black">{{ t().strip.cta }}</a>
       </div>
     </section>
 
     <!-- TEMAS -->
     <section id="temas" class="section">
       <div class="wrap">
-        <h2>Temas</h2>
-        <p class="muted">Selección del catálogo. Abrí y escuchá.</p>
+        <h2>{{ t().tracks.title }}</h2>
+        <p class="muted">{{ t().tracks.intro }}</p>
         <ul class="list">
-          @for (track of artist.tracks; track track.title; let i = $index) {
+          @for (track of artist().tracks; track track.title; let i = $index) {
             <li>
               <a
                 class="list__row"
@@ -255,10 +268,10 @@
     <!-- ESCUCHAR -->
     <section id="escuchar" class="section section--border">
       <div class="wrap">
-        <h2>Escuchar</h2>
-        <p class="muted">Las mismas redes del bio de Instagram.</p>
+        <h2>{{ t().listen.title }}</h2>
+        <p class="muted">{{ t().listen.intro }}</p>
         <div class="platforms">
-          @for (platform of artist.platforms; track platform.id) {
+          @for (platform of artist().platforms; track platform.id) {
             <a
               class="platforms__row"
               [href]="platform.href"
@@ -277,14 +290,11 @@
     <section id="historia" class="section section--border">
       <div class="wrap history">
         <div>
-          <p class="label">TRAYECTORIA</p>
-          <h2>Historia</h2>
-          <p class="muted history__intro">
-            De sesionista adolescente a Clavos Band, Cosquín Rock, el Gran Rex y
-            el material 2025 con Iorio, Martínez y Marciello.
-          </p>
+          <p class="label">{{ t().history.label }}</p>
+          <h2>{{ t().history.title }}</h2>
+          <p class="muted history__intro">{{ t().history.intro }}</p>
           <ol class="timeline">
-            @for (item of artist.milestones; track item.year + item.title) {
+            @for (item of artist().milestones; track item.year + item.title) {
               <li>
                 <span class="timeline__year">{{ item.year }}</span>
                 <div>
@@ -299,9 +309,9 @@
           <img
             ngSrc="photos/hq-band-studio.jpg"
             fill
-            alt="Clavos Band en estudio"
+            [alt]="t().alts.studio"
           />
-          <p class="history__caption">ESTUDIO</p>
+          <p class="history__caption">{{ t().history.studio }}</p>
         </div>
       </div>
     </section>
@@ -309,9 +319,9 @@
     <!-- FORMACIÓN -->
     <section class="section section--border">
       <div class="wrap">
-        <h2>Formación</h2>
+        <h2>{{ t().lineup.title }}</h2>
         <ul class="lineup">
-          @for (member of artist.lineup; track member.name) {
+          @for (member of artist().lineup; track member.name) {
             <li>
               <img src="nail.svg" alt="" class="nail" aria-hidden="true" />
               <p class="lineup__name">{{ member.name }}</p>
@@ -326,10 +336,10 @@
     <!-- DISCOS -->
     <section id="discos" class="section section--border">
       <div class="wrap">
-        <h2>Discografía</h2>
-        <p class="muted">Cada disco abre en Spotify.</p>
+        <h2>{{ t().discography.title }}</h2>
+        <p class="muted">{{ t().discography.intro }}</p>
         <ol class="list">
-          @for (album of artist.albums; track album.title; let i = $index) {
+          @for (album of artist().albums; track album.title; let i = $index) {
             <li>
               <a
                 class="list__row"
@@ -351,10 +361,10 @@
         <div class="mt">
           <a
             class="btn btn--primary"
-            [href]="artist.links.spotify"
+            [href]="artist().links.spotify"
             target="_blank"
             rel="noopener noreferrer"
-            >Ver artista en Spotify</a
+            >{{ t().discography.spotifyArtist }}</a
           >
         </div>
       </div>
@@ -367,22 +377,22 @@
           ngSrc="photos/logo-clavos.jpg"
           width="88"
           height="88"
-          alt="Clavos Band"
+          [alt]="t().alts.logo"
           class="contact__logo"
         />
-        <h2>{{ artist.booking.headline }}</h2>
-        <p class="muted">{{ artist.booking.body }}</p>
+        <h2>{{ artist().booking.headline }}</h2>
+        <p class="muted">{{ artist().booking.body }}</p>
         <div class="contact__ctas">
           <a
             class="btn btn--primary"
-            [href]="artist.links.instagram"
+            [href]="artist().links.instagram"
             target="_blank"
             rel="noopener noreferrer"
             >&#64;clavosband_clavito369</a
           >
           <a
             class="btn btn--outline"
-            [href]="artist.links.youtube"
+            [href]="artist().links.youtube"
             target="_blank"
             rel="noopener noreferrer"
             >YouTube</a
@@ -404,11 +414,11 @@
         />
         <div>
           <p class="footer__name">CLAVOS BAND</p>
-          <p class="muted small">Demo Angular local · Blues-rock · Desde 1992</p>
+          <p class="muted small">{{ t().footer.tag }}</p>
         </div>
       </div>
       <div class="footer__links">
-        @for (p of artist.platforms; track p.id) {
+        @for (p of artist().platforms; track p.id) {
           <a [href]="p.href" target="_blank" rel="noopener noreferrer">{{
             p.label
           }}</a>

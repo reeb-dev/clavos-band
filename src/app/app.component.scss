@@ -147,6 +147,14 @@ h2 {
   object-fit: cover;
 }
 
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
 .nav__links {
   display: flex;
   flex-wrap: wrap;
@@ -158,6 +166,43 @@ h2 {
 
 .nav__links a:hover {
   color: var(--red-glow);
+}
+
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.2rem 0.45rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.lang__btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  padding: 0.15rem 0.25rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang__btn:hover {
+  color: #fff;
+}
+
+.lang__btn--active {
+  color: var(--red-glow);
+}
+
+.lang__sep {
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 0.75rem;
+  user-select: none;
 }
 
 @media (max-width: 639px) {
